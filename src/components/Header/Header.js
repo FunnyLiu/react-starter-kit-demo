@@ -16,7 +16,15 @@ import logoUrl from './logo-small.png';
 import logoUrl2x from './logo-small@2x.png';
 
 export default function Header() {
+  //在浏览器端和服务端均会输出
+  console.log(`this is header`)
   useStyles(s);
+  if(process.env.BROWSER){
+    //只在浏览器端去输出
+    //也就是所只在浏览器端做的事情，可以在该条件下完成
+    debugger;
+    console.log(`this is header in browser`)
+  }
   return (
     <div className={s.root}>
       <div className={s.container}>
